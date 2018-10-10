@@ -15,4 +15,8 @@ exports.typeDefs = `
     joinDate: String
     favorites: [Cologne]
   }
+
+  type Query {
+    getAllColognes: [Cologne]
+  }
 `;
