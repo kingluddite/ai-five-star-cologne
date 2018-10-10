@@ -1,5 +1,6 @@
 exports.typeDefs = `
   type Cologne {
+    _id: ID
     scentName: String!
     scentPrice: Int
     createdDate: String
@@ -9,6 +10,7 @@ exports.typeDefs = `
   }
 
   type User {
+    _id: ID
     username: String!
     password: String!
     email: String!

@@ -1,6 +1,9 @@
 exports.resolvers = {
   Query: {
-    getAllColognes: () => {},
+    getAllColognes: async (root, args, { Cologne }) => {
+      const allColognes = await Cologne.find();
+      return allColognes;
+    },
   },
 
   Mutation: {
