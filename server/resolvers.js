@@ -33,7 +33,7 @@ exports.resolvers = {
       // does user already exist
       const user = await User.findOne({ username });
       if (user) {
-        throw new Error('User aleady exists');
+        throw new Error('User already exists');
       }
       // user doesn't exist, create a user
       const newUser = await new User({
