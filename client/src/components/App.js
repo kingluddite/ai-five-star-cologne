@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // graphql
-import { Query } from 'react-apollo';
-import { GET_ALL_COLOGNES } from '../queries';
+import { Query } from "react-apollo";
+import { GET_ALL_COLOGNES } from "../queries";
 
 // styles
-import './App.scss';
+import "./App.scss";
 
 class App extends Component {
   render() {

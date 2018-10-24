@@ -1,21 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import ReactDOM from "react-dom";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
-} from 'react-router-dom';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
+  Redirect
+} from "react-router-dom";
+
+// MORE CODE
 
 // custom components
-import App from './components/App';
-import Signin from './components/Auth/Signin';
-import Signup from './components/Auth/Signup';
+import App from "./components/App";
+import Signin from "./components/Auth/Signin";
+import Signup from "./components/Auth/Signup";
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4444/graphql',
+  uri: "http://localhost:4444/graphql"
 });
 
 const Root = () => (
@@ -33,5 +35,5 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <Root />
   </ApolloProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
