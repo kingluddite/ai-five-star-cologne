@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const createToken = (user, secret, expiresIn) => {
   const { username, email } = user;
@@ -10,7 +10,7 @@ exports.resolvers = {
     getAllColognes: async (root, args, { Cologne }) => {
       const allColognes = await Cologne.find();
       return allColognes;
-    },
+    }
   },
 
   Mutation: {
@@ -23,7 +23,7 @@ exports.resolvers = {
         scentName,
         scentPrice,
         description,
-        username,
+        username
       }).save();
 
       return newCologne;
@@ -33,15 +33,15 @@ exports.resolvers = {
       // does user already exist
       const user = await User.findOne({ username });
       if (user) {
-        throw new Error('User already exists');
+        throw new Error("User already exists");
       }
       // user doesn't exist, create a user
       const newUser = await new User({
         username,
         email,
-        password,
+        password
       }).save();
-      return { token: createToken(newUser, process.env.SECRET, '1hr') };
-    },
-  },
+      return { token: createToken(newUser, process.env.SECRET, "1hr") };
+    }
+  }
 };
