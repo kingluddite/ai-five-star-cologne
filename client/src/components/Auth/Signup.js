@@ -4,8 +4,26 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import { SIGNUP_USER_MUTATION } from "../../queries";
 
+// custom components
+import Error from "../Error";
+
+const initialState = {
+  username: "",
+  email: "",
+  password: "",
+  passwordConfirmation: ""
+};
+
 class Signup extends Component {
-  state = { username: "", email: "", password: "", passwordConfirmation: "" };
+  state = {
+    ...initialState
+  };
+
+  clearForm = () => {
+    this.setState({
+      ...initialState
+    });
+  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -19,6 +37,7 @@ class Signup extends Component {
     event.preventDefault();
     signupUser().then(data => {
       console.log(data);
+      this.clearForm();
     });
   };
 
@@ -33,7 +52,7 @@ class Signup extends Component {
         >
           {(signupUser, { data, loading, error }) => {
             if (loading) return <div>Loading...</div>;
-            if (error) return <div>Error {error.message}</div>;
+            // if (error) return <div>Error {error.message}</div>;
             console.log(data);
 
             return (
@@ -89,6 +108,7 @@ class Signup extends Component {
                   <button type="submit" className="button-primary">
                     Signup
                   </button>
+                  {error && <Error error={error} />}
                 </div>
               </form>
             );
