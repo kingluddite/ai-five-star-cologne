@@ -17,8 +17,8 @@ class Signup extends Component {
 
   handleSubmit = (event, signupUser) => {
     event.preventDefault();
-    signupUser().then(({ data: { signupUser } }) => {
-      console.log(signupUser);
+    signupUser().then(data => {
+      console.log(data);
     });
   };
 
@@ -27,7 +27,10 @@ class Signup extends Component {
     return (
       <div className="App">
         <h2 className="App">Signup</h2>
-        <Mutation mutation={SIGNUP_USER_MUTATION}>
+        <Mutation
+          mutation={SIGNUP_USER_MUTATION}
+          variables={{ username, email, password }}
+        >
           {(signupUser, { data, loading, error }) => {
             if (loading) return <div>Loading...</div>;
             if (error) return <div>Error {error.message}</div>;

@@ -2,7 +2,7 @@ import { gql } from "apollo-boost";
 
 // Mutations
 export const GET_ALL_COLOGNES = gql`
-  query {
+  query GET_ALL_COLOGNES {
     getAllColognes {
       scentName
       scentPrice
