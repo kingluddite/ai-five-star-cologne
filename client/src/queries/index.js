@@ -13,6 +13,14 @@ export const GET_ALL_COLOGNES = gql`
   }
 `;
 
+export const SIGNIN_USER_MUTATION = gql`
+  mutation SIGNIN_USER_MUTATION($username: String!, $password: String!) {
+    signinUser(username: $username, password: $password) {
+      token
+    }
+  }
+`;
+
 export const SIGNUP_USER_MUTATION = gql`
   mutation SIGNUP_USER_MUTATION(
     $username: String!
