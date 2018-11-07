@@ -29,6 +29,7 @@ exports.typeDefs = `
   type Mutation {
     addCologne(scentName: String!, scentPrice: Int, description: String, username: String): Cologne
 
+    signinUser(username: String!, password: String!): Token
     signupUser(username: String!, email: String! password: String!): Token
   }
 `;

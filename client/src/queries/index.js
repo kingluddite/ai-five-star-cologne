@@ -2,13 +2,21 @@ import { gql } from "apollo-boost";
 
 // Mutations
 export const GET_ALL_COLOGNES = gql`
-  query {
+  query GET_ALL_COLOGNES {
     getAllColognes {
       scentName
       scentPrice
       description
       createdDate
       likes
+    }
+  }
+`;
+
+export const SIGNIN_USER_MUTATION = gql`
+  mutation SIGNIN_USER_MUTATION($username: String!, $password: String!) {
+    signinUser(username: $username, password: $password) {
+      token
     }
   }
 `;

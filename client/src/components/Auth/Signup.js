@@ -4,8 +4,26 @@ import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import { SIGNUP_USER_MUTATION } from "../../queries";
 
+// custom components
+import Error from "../Error";
+
+const initialState = {
+  username: "",
+  email: "",
+  password: "",
+  passwordConfirmation: ""
+};
+
 class Signup extends Component {
-  state = { username: "", email: "", password: "", passwordConfirmation: "" };
+  state = {
+    ...initialState
+  };
+
+  clearForm = () => {
+    this.setState({
+      ...initialState
+    });
+  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -17,9 +35,18 @@ class Signup extends Component {
 
   handleSubmit = (event, signupUser) => {
     event.preventDefault();
-    signupUser().then(({ data: { signupUser } }) => {
-      console.log(signupUser);
+    signupUser().then(data => {
+      console.log(data);
+      this.clearForm();
     });
+  };
+
+  validateForm = () => {
+    const { username, email, password, passwordConfirmation } = this.state;
+    const isInvalid =
+      !username || !email || !password || password !== passwordConfirmation;
+
+    return isInvalid;
   };
 
   render() {
@@ -27,10 +54,13 @@ class Signup extends Component {
     return (
       <div className="App">
         <h2 className="App">Signup</h2>
-        <Mutation mutation={SIGNUP_USER_MUTATION}>
+        <Mutation
+          mutation={SIGNUP_USER_MUTATION}
+          variables={{ username, email, password }}
+        >
           {(signupUser, { data, loading, error }) => {
             if (loading) return <div>Loading...</div>;
-            if (error) return <div>Error {error.message}</div>;
+            // if (error) return <div>Error {error.message}</div>;
             console.log(data);
 
             return (
@@ -83,9 +113,14 @@ class Signup extends Component {
                   Confirm Password
                 </label>
                 <div>
-                  <button type="submit" className="button-primary">
+                  <button
+                    type="submit"
+                    className="button-primary"
+                    disabled={loading || this.validateForm()}
+                  >
                     Signup
                   </button>
+                  {error && <Error error={error} />}
                 </div>
               </form>
             );
