@@ -41,6 +41,14 @@ class Signup extends Component {
     });
   };
 
+  validateForm = () => {
+    const { username, email, password, passwordConfirmation } = this.state;
+    const isInvalid =
+      !username || !email || !password || password !== passwordConfirmation;
+
+    return isInvalid;
+  };
+
   render() {
     const { username, email, password, passwordConfirmation } = this.state;
     return (
@@ -105,7 +113,11 @@ class Signup extends Component {
                   Confirm Password
                 </label>
                 <div>
-                  <button type="submit" className="button-primary">
+                  <button
+                    type="submit"
+                    className="button-primary"
+                    disabled={loading || this.validateForm()}
+                  >
                     Signup
                   </button>
                   {error && <Error error={error} />}
