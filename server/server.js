@@ -51,7 +51,7 @@ app.use(async (req, res, next) => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => ({ Cologne, User })
+  context: ({ req }) => ({ Cologne, User, currentUser: req.currentUser })
 });
 
 server.applyMiddleware({ app });

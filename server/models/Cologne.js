@@ -1,28 +1,29 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+
+const { Schema } = mongoose;
 
 const CologneSchema = new Schema({
   scentName: {
     type: String,
-    required: true,
+    required: true
   },
   scentPrice: {
-    type: Number,
+    type: Number
   },
   description: {
-    type: String,
+    type: String
   },
   createdDate: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
   likes: {
     type: Number,
-    default: 0,
+    default: 0
   },
   username: {
-    type: String,
-  },
+    type: String
+  }
 });
 
-module.exports = mongoose.model('Cologne', CologneSchema);
+module.exports = mongoose.model("Cologne", CologneSchema);

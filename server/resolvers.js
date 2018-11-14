@@ -11,6 +11,21 @@ exports.resolvers = {
     getAllColognes: async (root, args, { Cologne }) => {
       const allColognes = await Cologne.find();
       return allColognes;
+    },
+    getCurrentUser: async (root, args, { currentUser, User }) => {
+      // check if user is logged in
+      if (!currentUser) {
+        return null;
+      }
+      // user is logged in
+      // let's get their info
+      const user = await User.findOne({
+        username: currentUser.username
+      }).populate({
+        path: "favorites",
+        model: "Cologne" // make sure this is singular
+      });
+      return user;
     }
   },
 

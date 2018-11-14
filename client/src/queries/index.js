@@ -1,6 +1,6 @@
 import { gql } from "apollo-boost";
 
-// Mutations
+// Queries
 export const GET_ALL_COLOGNES = gql`
   query GET_ALL_COLOGNES {
     getAllColognes {
@@ -13,6 +13,17 @@ export const GET_ALL_COLOGNES = gql`
   }
 `;
 
+export const GET_CURRENT_USER_QUERY = gql`
+  query GET_CURRENT_USER_QUERY {
+    getCurrentUser {
+      username
+      #email
+      joinDate
+    }
+  }
+`;
+
+// Mutations
 export const SIGNIN_USER_MUTATION = gql`
   mutation SIGNIN_USER_MUTATION($username: String!, $password: String!) {
     signinUser(username: $username, password: $password) {
