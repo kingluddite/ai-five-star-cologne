@@ -38,6 +38,13 @@ class Signin extends Component {
     });
   };
 
+  handleSubmit = (event, signinUser) => {
+    signinUser().then(({ data }) => {
+      localStorage.setItem("token", data.signinUser.token);
+      this.clearForm();
+    });
+  };
+
   validateForm = () => {
     const { username, password } = this.state;
     const isInvalid = !username || !password;

@@ -30,6 +30,13 @@ mongoose.set("useCreateIndex", true);
 // initialize app
 const app = express();
 
+// set up JWT authentication middleware
+app.use(async (req, res, next) => {
+  const token = req.headers.authorization;
+  console.log(req.headers);
+  next();
+});
+
 // create apollo server
 const server = new ApolloServer({
   typeDefs,
