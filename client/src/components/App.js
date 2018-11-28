@@ -5,12 +5,12 @@ import { Query } from "react-apollo";
 import { GET_ALL_COLOGNES } from "../queries";
 
 // styles
-import "./App.scss";
+import "../assets/scss/main.scss";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div id="wrapper">
         <h1>Home</h1>
         <Query query={GET_ALL_COLOGNES}>
           {({ data, loading, error }) => {

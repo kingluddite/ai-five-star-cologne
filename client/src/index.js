@@ -16,6 +16,7 @@ import App from "./components/App";
 import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
 import withSession from "./components/withSession";
+import Elements from "./components/Elements";
 
 const client = new ApolloClient({
   uri: "http://localhost:4444/graphql",
@@ -43,6 +44,7 @@ const Root = () => (
       <Route path="/" exact component={App} />
       <Route path="/signin" component={Signin} />
       <Route path="/signup" component={Signup} />
+      <Route path="/elements" component={Elements} />
       <Redirect to="/" />
     </Switch>
   </Router>
