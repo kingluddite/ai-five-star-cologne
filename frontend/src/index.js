@@ -8,6 +8,7 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
+import PropTypes from "prop-types";
 
 // MORE CODE
 
@@ -40,14 +41,14 @@ const client = new ApolloClient({
   }
 });
 
-const Root = () => (
+const Root = ({ refetch }) => (
   <Router>
     <div id="wrapper">
       <Navbar />
       <Switch>
         <Route path="/" exact component={App} />
-        <Route path="/signin" component={Signin} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/signin" render={() => <Signin refetch={refetch} />} />
+        <Route path="/signup" render={() => <Signup refetch={refetch} />} />
         <Route path="/elements" component={Elements} />
         <Redirect to="/" />
       </Switch>
@@ -55,6 +56,16 @@ const Root = () => (
     </div>
   </Router>
 );
+
+Root.propTypes = {
+  refetch: PropTypes.func
+  // session: PropTypes.object,
+};
+
+Root.defaultProps = {
+  refetch: undefined
+  // session: null,
+};
 
 const RootWithSession = withSession(Root);
 

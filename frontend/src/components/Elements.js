@@ -96,7 +96,7 @@ class Elements extends Component {
                     is <sup>superscript</sup> text and this is{" "}
                     <sub>subscript</sub> text. This is <u>underlined</u> and
                     this is code: <code>for (;;)</code>. Finally, this is a{" "}
-                    <a href="#">link</a>.
+                    <a href="/">link</a>.
                   </p>
                   <hr />
                   <h2>Heading Level 2</h2>
@@ -142,49 +142,49 @@ class Elements extends Component {
                       <h4>Icons</h4>
                       <ul className="icons">
                         <li>
-                          <a href="#" className="icon fa-twitter">
+                          <a href="/" className="icon fa-twitter">
                             <span className="label">Twitter</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="icon fa-facebook">
+                          <a href="/" className="icon fa-facebook">
                             <span className="label">Facebook</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="icon fa-instagram">
+                          <a href="/" className="icon fa-instagram">
                             <span className="label">Instagram</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="icon fa-github">
+                          <a href="/" className="icon fa-github">
                             <span className="label">Github</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="icon fa-dribbble">
+                          <a href="/" className="icon fa-dribbble">
                             <span className="label">Dribbble</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="icon fa-tumblr">
+                          <a href="/" className="icon fa-tumblr">
                             <span className="label">Tumblr</span>
                           </a>
                         </li>
                       </ul>
                       <ul className="icons">
                         <li>
-                          <a href="#" className="icon alt fa-twitter">
+                          <a href="/" className="icon alt fa-twitter">
                             <span className="label">Twitter</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="icon alt fa-facebook">
+                          <a href="/" className="icon alt fa-facebook">
                             <span className="label">Facebook</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="icon alt fa-instagram">
+                          <a href="/" className="icon alt fa-instagram">
                             <span className="label">Instagram</span>
                           </a>
                         </li>
@@ -225,24 +225,24 @@ class Elements extends Component {
                   <h4>Actions</h4>
                   <ul className="actions">
                     <li>
-                      <a href="#" className="button special">
+                      <a href="/" className="button special">
                         Default
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button">
+                      <a href="/" className="button">
                         Default
                       </a>
                     </li>
                   </ul>
                   <ul className="actions small">
                     <li>
-                      <a href="#" className="button special small">
+                      <a href="/" className="button special small">
                         Small
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button small">
+                      <a href="/" className="button small">
                         Small
                       </a>
                     </li>
@@ -251,12 +251,12 @@ class Elements extends Component {
                     <div className="col-6">
                       <ul className="actions vertical">
                         <li>
-                          <a href="#" className="button special">
+                          <a href="/" className="button special">
                             Default
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="button">
+                          <a href="/" className="button">
                             Default
                           </a>
                         </li>
@@ -265,12 +265,12 @@ class Elements extends Component {
                     <div className="col-6">
                       <ul className="actions vertical small">
                         <li>
-                          <a href="#" className="button special small">
+                          <a href="/" className="button special small">
                             Small
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="button small">
+                          <a href="/" className="button small">
                             Small
                           </a>
                         </li>
@@ -279,12 +279,12 @@ class Elements extends Component {
                     <div className="col-6">
                       <ul className="actions vertical">
                         <li>
-                          <a href="#" className="button special fit">
+                          <a href="/" className="button special fit">
                             Default
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="button fit">
+                          <a href="/" className="button fit">
                             Default
                           </a>
                         </li>
@@ -293,12 +293,12 @@ class Elements extends Component {
                     <div className="col-6">
                       <ul className="actions vertical small">
                         <li>
-                          <a href="#" className="button special small fit">
+                          <a href="/" className="button special small fit">
                             Small
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="button small fit">
+                          <a href="/" className="button small fit">
                             Small
                           </a>
                         </li>
@@ -312,17 +312,17 @@ class Elements extends Component {
                       <span className="button small disabled">Prev</span>
                     </li>
                     <li>
-                      <a href="#" className="page active">
+                      <a href="/" className="page active">
                         1
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="page">
+                      <a href="/" className="page">
                         2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="page">
+                      <a href="/" className="page">
                         3
                       </a>
                     </li>
@@ -330,22 +330,22 @@ class Elements extends Component {
                       <span>&hellip;</span>
                     </li>
                     <li>
-                      <a href="#" className="page">
+                      <a href="/" className="page">
                         8
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="page">
+                      <a href="/" className="page">
                         9
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="page">
+                      <a href="/" className="page">
                         10
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button small">
+                      <a href="/" className="button small">
                         Next
                       </a>
                     </li>
@@ -459,82 +459,82 @@ class Elements extends Component {
                   <h3>Buttons</h3>
                   <ul className="actions">
                     <li>
-                      <a href="#" className="button special">
+                      <a href="/" className="button special">
                         Special
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button">
+                      <a href="/" className="button">
                         Default
                       </a>
                     </li>
                   </ul>
                   <ul className="actions">
                     <li>
-                      <a href="#" className="button big">
+                      <a href="/" className="button big">
                         Big
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button">
+                      <a href="/" className="button">
                         Default
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button small">
+                      <a href="/" className="button small">
                         Small
                       </a>
                     </li>
                   </ul>
                   <ul className="actions">
                     <li>
-                      <a href="#" className="button special big">
+                      <a href="/" className="button special big">
                         Big
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button special">
+                      <a href="/" className="button special">
                         Default
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button special small">
+                      <a href="/" className="button special small">
                         Small
                       </a>
                     </li>
                   </ul>
                   <ul className="actions fit">
                     <li>
-                      <a href="#" className="button special fit">
+                      <a href="/" className="button special fit">
                         Fit
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button fit">
+                      <a href="/" className="button fit">
                         Fit
                       </a>
                     </li>
                   </ul>
                   <ul className="actions fit small">
                     <li>
-                      <a href="#" className="button special fit small">
+                      <a href="/" className="button special fit small">
                         Fit + Small
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button fit small">
+                      <a href="/" className="button fit small">
                         Fit + Small
                       </a>
                     </li>
                   </ul>
                   <ul className="actions">
                     <li>
-                      <a href="#" className="button special icon fa-search">
+                      <a href="/" className="button special icon fa-search">
                         Icon
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="button icon fa-download">
+                      <a href="/" className="button icon fa-download">
                         Icon
                       </a>
                     </li>

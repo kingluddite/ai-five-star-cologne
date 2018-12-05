@@ -16,7 +16,8 @@ const initialState = {
 
 class Signin extends Component {
   static propTypes = {
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
+    refetch: PropTypes.func.isRequired
   };
 
   state = {
@@ -37,9 +38,10 @@ class Signin extends Component {
   };
 
   handleSubmit = (event, signinUser) => {
-    const { history } = this.props;
-    signinUser().then(({ data }) => {
+    const { history, refetch } = this.props;
+    signinUser().then(async ({ data }) => {
       localStorage.setItem("token", data.signinUser.token);
+      await refetch();
       this.clearForm();
       history.push("/");
     });
