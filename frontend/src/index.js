@@ -12,11 +12,13 @@ import {
 // MORE CODE
 
 // custom components
+import Navbar from "./components/Navbar";
 import App from "./components/App";
 import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
 import withSession from "./components/withSession";
 import Elements from "./components/Elements";
+import Footer from "./components/Footer";
 
 const client = new ApolloClient({
   uri: "http://localhost:4444/graphql",
@@ -40,13 +42,17 @@ const client = new ApolloClient({
 
 const Root = () => (
   <Router>
-    <Switch>
-      <Route path="/" exact component={App} />
-      <Route path="/signin" component={Signin} />
-      <Route path="/signup" component={Signup} />
-      <Route path="/elements" component={Elements} />
-      <Redirect to="/" />
-    </Switch>
+    <div id="wrapper">
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={App} />
+        <Route path="/signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/elements" component={Elements} />
+        <Redirect to="/" />
+      </Switch>
+      <Footer />
+    </div>
   </Router>
 );
 

@@ -10,7 +10,7 @@ import "../assets/scss/main.scss";
 class App extends Component {
   render() {
     return (
-      <div id="wrapper">
+      <>
         <h1>Home</h1>
         <Query query={GET_ALL_COLOGNES}>
           {({ data, loading, error }) => {
@@ -21,7 +21,7 @@ class App extends Component {
             return <p>Colognes</p>;
           }}
         </Query>
-      </div>
+      </>
     );
   }
 }
