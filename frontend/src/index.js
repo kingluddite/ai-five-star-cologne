@@ -14,6 +14,7 @@ import PropTypes from "prop-types";
 
 // custom components
 import Navbar from "./components/shared/Navbar";
+import Search from "./components/cologne/Search";
 import App from "./components/App";
 import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
@@ -47,6 +48,7 @@ const Root = ({ refetch }) => (
       <Navbar />
       <Switch>
         <Route path="/" exact component={App} />
+        <Route path="/search" component={Search} />
         <Route path="/signin" render={() => <Signin refetch={refetch} />} />
         <Route path="/signup" render={() => <Signup refetch={refetch} />} />
         <Route path="/elements" component={Elements} />

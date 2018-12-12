@@ -52,6 +52,11 @@ a {
   }
 }
 
+/* active links */
+.active {
+  font-weight: bold;
+}
+
 strong,
 b {
   color: _palette(fg-bold);
