@@ -15,9 +15,11 @@ import PropTypes from "prop-types";
 // custom components
 import Navbar from "./components/shared/Navbar";
 import Search from "./components/cologne/Search";
+import AddCologne from "./components/cologne/AddCologne";
+import Profile from "./components/profile/Profile";
 import App from "./components/App";
-import Signin from "./components/Auth/Signin";
-import Signup from "./components/Auth/Signup";
+import Signin from "./components/auth/Signin";
+import Signup from "./components/auth/Signup";
 import withSession from "./components/withSession";
 import Elements from "./components/Elements";
 import Footer from "./components/Footer";
@@ -49,6 +51,8 @@ const Root = ({ refetch }) => (
       <Switch>
         <Route path="/" exact component={App} />
         <Route path="/search" component={Search} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/cologne/add" component={AddCologne} />
         <Route path="/signin" render={() => <Signin refetch={refetch} />} />
         <Route path="/signup" render={() => <Signup refetch={refetch} />} />
         <Route path="/elements" component={Elements} />
