@@ -13,7 +13,7 @@ import PropTypes from "prop-types";
 // MORE CODE
 
 // custom components
-import Navbar from "./components/Navbar";
+import Navbar from "./components/shared/Navbar";
 import App from "./components/App";
 import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
