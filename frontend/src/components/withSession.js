@@ -7,10 +7,10 @@ import { GET_CURRENT_USER_QUERY } from "../queries";
 const withSession = Component => props => (
   <Query query={GET_CURRENT_USER_QUERY}>
     {({ data, loading, refetch }) => {
-      if (loading) return <p>Loading...</p>;
+      if (loading) return null;
       console.log(data);
 
-      return <Component {...props} refetch={refetch} />;
+      return <Component {...props} refetch={refetch} session={data} />;
     }}
   </Query>
 );

@@ -1,51 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Navbar = () => (
-  <nav>
-    <NavbarAuth />
-  </nav>
-);
+// custom components
+import NavbarAuth from "./NavbarAuth";
+import NavbarUnauth from "./NavbarUnauth";
 
-const NavbarAuth = () => (
-  <ul>
-    <li>
-      <NavLink to="/" exact>
-        Home
-      </NavLink>
-    </li>
-    <li>
-      <NavLink to="/search">Search</NavLink>
-    </li>
-    <li>
-      <NavLink to="/cologne/add">Add Cologne</NavLink>
-    </li>
-    <li>
-      <NavLink to="/profile">Profile</NavLink>
-    </li>
-    <li>
-      <button>Signout</button>
-    </li>
-  </ul>
-);
+class Navbar extends Component {
+  static propTypes = {
+    session: PropTypes.object
+  };
 
-const NavbarUnAuth = () => (
-  <ul>
-    <li>
-      <NavLink to="/" exact>
-        Home
-      </NavLink>
-    </li>
-    <li>
-      <NavLink to="/search">Search</NavLink>
-    </li>
-    <li>
-      <NavLink to="/signin">Signin</NavLink>
-    </li>
-    <li>
-      <NavLink to="/signup">Signup</NavLink>
-    </li>
-  </ul>
-);
+  static defaultProps = {
+    session: null
+  };
+
+  render() {
+    const { session } = this.props;
+
+    return (
+      <nav>
+        {session && session.getCurrentUser ? (
+          <NavbarAuth session={session} />
+        ) : (
+          <NavbarUnauth />
+        )}
+      </nav>
+    );
+  }
+}
 
 export default Navbar;
